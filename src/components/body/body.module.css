@@ -1,0 +1,4 @@
+.contentcontainer{
+    grid-column: auto /span 12;
+    display: grid;
+}

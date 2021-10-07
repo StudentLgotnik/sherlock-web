@@ -1,9 +1,9 @@
 import React from 'react';
 
-import './history-content.css';
+import './history.css';
 
 
-export const HistoryContent = props => {
+export const History = props => {
     return (
         <div>
             HISTORY CONTENT

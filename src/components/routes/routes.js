@@ -10,11 +10,12 @@ import styles from "./routes.module.css"
 
 export const Routes = () => {
   return (
-    <div className={styles.container}>
-      <Router>
+
+    <Router>
+      <div className={styles.container}>
         <Header/>
         <Body/>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 };

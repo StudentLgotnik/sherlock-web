@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import styles from './main.module.css'
 import ClusteringConfigurator from "./components/clustering-configurator/clustering-configurator";
-import ClustersView from "./clusters/clusters.view";
+import SherlockRun from "./clusters/sherlock.run";
 
 class Main extends Component {
 
@@ -24,9 +24,7 @@ class Main extends Component {
     return (
       <div className={styles.contentcontainer}>
         <ClusteringConfigurator handleClusters = {this.handleClusters}/>
-        <ClustersView sherlockDto = {this.state.sherlockDto}/>
-        {/*<Chart />*/}
-        {/*<Dataset />*/}
+        <SherlockRun sherlockDto = {this.state.sherlockDto}/>
       </div>
     );
   }

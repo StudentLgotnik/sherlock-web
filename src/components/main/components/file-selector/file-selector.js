@@ -15,7 +15,7 @@ const MyComponent = (props) => {
   return (
     <form ref={form} onSubmit={submit}>
       <table>
-        <tr><td>File to upload:</td><td><input type="file" name="files" /></td></tr>
+        <tr><td>File to upload:</td><td><input type="file" name="files" multiple="multiple"/></td></tr>
         <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
       </table>
     </form>

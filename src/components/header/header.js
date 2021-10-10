@@ -5,6 +5,8 @@ import {
 import styles from './header.module.css';
 import logo from '../../resources/images/sherlock_logo.svg'
 import user from '../../resources/images/noun_user.svg'
+import {UserContext} from "../../context/user-context";
+import UserForm from "./user-form/user.form";
 
 class Header extends Component {
   render() {
@@ -25,10 +27,10 @@ class Header extends Component {
             </li>
           </ul>
         </div>
-        <div>
-          <img src={user} alt="user-icon" width="30" height="30"/>
-          <span className={styles.login}>Log in</span>
+        <div className={styles.login_container} >
+          <UserForm/>
         </div>
+
       </header>
     );
   }

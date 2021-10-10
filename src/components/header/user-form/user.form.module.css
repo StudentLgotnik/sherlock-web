@@ -1,0 +1,27 @@
+.md-social-btn .mbsc-ic {
+    float: left;
+}
+
+.login_txt {
+    margin: 5px;
+    color: black;
+    vertical-align: middle;
+    font-size: 15px;
+}
+
+.login_btn {
+    background:none;
+    border:none;
+    padding:0;
+    cursor: pointer;
+    margin: 0px 0px 0px 5px;
+    color: black;
+    vertical-align: middle;
+    font-size : 15px;
+}
+
+.login_img {
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}

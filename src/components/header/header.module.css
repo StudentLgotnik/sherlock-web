@@ -51,8 +51,10 @@
     outline:none;
 }
 
-.login {
-    color: black;
+.login_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media(max-width:767px){

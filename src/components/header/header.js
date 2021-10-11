@@ -4,11 +4,23 @@ import {
 } from "react-router-dom";
 import styles from './header.module.css';
 import logo from '../../resources/images/sherlock_logo.svg'
-import user from '../../resources/images/noun_user.svg'
 import {UserContext} from "../../context/user-context";
 import UserForm from "./user-form/user.form";
+import jwt from "jwt-decode";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 class Header extends Component {
+
+  componentDidMount() {
+    const token = cookies.get("token")
+    if (token) {
+      const [name, email] = jwt(token).sub.split(',');
+      this.context.setCurrentUser({name, email})
+    }
+  }
+
   render() {
     return (
       <header fluid className={styles.navbarcontainer}>
@@ -35,5 +47,7 @@ class Header extends Component {
     );
   }
 }
+
+Header.contextType = UserContext;
 
 export default Header;

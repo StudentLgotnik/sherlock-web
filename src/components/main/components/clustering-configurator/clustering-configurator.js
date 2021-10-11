@@ -21,22 +21,22 @@ class ClusteringConfigurator extends Component {
 
           <FileSelector handleClusters = {this.props.handleClusters}/>
 
-          <Collapsible trigger={["Advance", <BsChevronDown/>]}>
-            <div className={styles.advanceConfiguration}>
-              <div>
-                <p className={styles.para}>Epsilon</p>
-                <input className={styles.config_input}/>
-              </div>
-              <div>
-                <p className={styles.para}>Min points</p>
-                <input className={styles.config_input}/>
-              </div>
-            </div>
-          </Collapsible>
+          {/*<Collapsible trigger={["Advance", <BsChevronDown/>]}>*/}
+          {/*  <div className={styles.advanceConfiguration}>*/}
+          {/*    <div>*/}
+          {/*      <p className={styles.para}>Epsilon</p>*/}
+          {/*      <input className={styles.config_input}/>*/}
+          {/*    </div>*/}
+          {/*    <div>*/}
+          {/*      <p className={styles.para}>Min points</p>*/}
+          {/*      <input className={styles.config_input}/>*/}
+          {/*    </div>*/}
+          {/*  </div>*/}
+          {/*</Collapsible>*/}
 
-          <div className={styles.paralogin}>
-            <p>Or <a href="#">Signin</a> / <a href="#">Signup</a> To save result</p>
-          </div>
+          {/*<div className={styles.paralogin}>*/}
+          {/*  <p>Or <a href="#">Signin</a> / <a href="#">Signup</a> To save result</p>*/}
+          {/*</div>*/}
         </div>
       </div>
     );

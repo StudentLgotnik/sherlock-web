@@ -27,38 +27,6 @@
     max-width: 100%;
 }
 
-.Collapsible__trigger {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.Collapsible__trigger.is-open svg {
-    transform: rotate(180deg);
-}
-
-.Collapsible__trigger.is-closed svg {
-    transform: rotate(180deg);
-}
-
-.advanceConfiguration div{
-    float: left;
-    clear: none;
-}
-
-.config_input
-{
-    text-indent:20px;
-    font-size:15px;
-    width:45%;
-    border:none;
-    height:20px;
-    border-radius:10px;
-    outline:none;
-    -webkit-box-shadow: -6px 21px 51px -2px rgba(0,0,0,0.21);
-    -moz-box-shadow: -6px 21px 51px -2px rgba(0,0,0,0.21);
-    box-shadow: -6px 21px 51px -2px rgba(94,252,232,0.21);
-}
 
 .navrow a{
     background-color: white;
@@ -77,10 +45,6 @@
     -webkit-box-shadow: -1px 27px 26px -20px rgba(0,0,0,0.75);
     -moz-box-shadow: -1px 27px 26px -20px rgba(0,0,0,0.75);
     box-shadow: -1px 27px 26px -20px rgba(0,0,0,0.75);
-}
-
-.para{
-    text-align: center;
 }
 
 
@@ -106,6 +70,10 @@
     .para{
         font-size: 12px;
     }
+}
+
+.para{
+    text-align: center;
 }
 
 @media(max-width:767px)

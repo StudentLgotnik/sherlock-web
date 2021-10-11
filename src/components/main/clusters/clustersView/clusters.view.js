@@ -1,6 +1,7 @@
 import React from 'react';
 import Collapsible from "react-collapsible";
 import {Dataset} from "../dataset/dataset";
+import Chart from "../chart/chart";
 
 const ClustersView = (props) => {
   const clusterList = getClustersListIfExist(props.sherlockDto)
@@ -15,6 +16,7 @@ function getClustersListIfExist(sherlockDto) {
   if (sherlockDto !== undefined) {
     return (
       <div>
+        <Chart sherlockDto = {sherlockDto}/>
         <ul>
           {sherlockDto.clusters.map(item => (
             <li>

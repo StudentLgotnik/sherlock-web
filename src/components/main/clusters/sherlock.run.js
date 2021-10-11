@@ -2,7 +2,6 @@ import React from 'react';
 import ClustersView from "./clustersView/clusters.view";
 import Cookies from 'universal-cookie';
 import {UserContext} from "../../../context/user-context";
-import {Chart} from "./chart/chart";
 
 const cookies = new Cookies();
 
@@ -45,7 +44,6 @@ const SherlockRun = props => {
 
   return (
     <div>
-      <Chart clusters = {props.sherlockDto}/>
       <ClustersView sherlockDto={props.sherlockDto}/>
       {saveBtn}
     </div>

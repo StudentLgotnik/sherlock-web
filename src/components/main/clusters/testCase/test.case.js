@@ -1,9 +1,10 @@
 import React from 'react';
 import Collapsible from "react-collapsible";
+import CollapsibleButton from "../../components/collapsible-button/collapsible.button";
 
 const TestCase = props => {
   return (
-    <Collapsible trigger={props.testCase.testName}>
+    <Collapsible trigger={<CollapsibleButton collapsibleName={props.testCase.testName}/>}>
       <p>{props.testCase.stackTrace}</p>
     </Collapsible>
   );

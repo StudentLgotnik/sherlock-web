@@ -47,6 +47,17 @@
   border-radius:20px;
   outline:none!important;
 }
+
+.uploadSubmit {
+  background-color: white;
+  color: black;
+  padding: 0.2rem;
+  font-family: sans-serif;
+  font-size: 15px;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  border-width: 1px;
+}
    
 .white{color:white;}
 

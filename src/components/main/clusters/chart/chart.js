@@ -1,17 +1,23 @@
 import React, {Component} from 'react';
-import { Doughnut } from 'react-chartjs-2';
+import {Doughnut} from 'react-chartjs-2';
+import styles from "./chart.module.css"
 
 class Chart extends Component {
 
-  constructor(props) {
-    super(props);
+  getRandomColor() {
+    const r = Math.round(Math.random() * 255);
+    const g = Math.round(Math.random() * 255);
+    const b = Math.round(Math.random() * 255);
+    return [`rgba(${r}, ${g}, ${b}, 0.2)`, `rgba(${r}, ${g}, ${b}, 1)`];
+  }
 
-    const clusters = props.sherlockDto.clusters;
-    let labels =[]
+  render() {
+    const clusters = this.props.sherlockDto.clusters;
+    let labels = []
     let testCaseNumbers = []
     let bgColors = []
     let bColors = []
-    clusters.map( cluster => {
+    clusters.map(cluster => {
       labels.push(cluster.name);
       testCaseNumbers.push(cluster.testCases.length)
       const [bgColor, bColor] = this.getRandomColor()
@@ -23,7 +29,7 @@ class Chart extends Component {
       labels: labels,
       datasets: [
         {
-          label: `${props.sherlockDto.runName}`,
+          label: `${this.props.sherlockDto.runName}`,
           data: testCaseNumbers,
           backgroundColor: bgColors,
           borderColor: bColors,
@@ -31,21 +37,10 @@ class Chart extends Component {
         },
       ],
     };
-    this.state = {
-      clusterData: data
-    }
-  }
-
-  getRandomColor() {
-    const r = Math.round (Math.random () * 255);
-    const g = Math.round (Math.random () * 255);
-    const b = Math.round (Math.random () * 255);
-    return [`rgba(${r}, ${g}, ${b}, 0.2)`, `rgba(${r}, ${g}, ${b}, 1)`];
-  }
-
-  render() {
     return (
-      <Doughnut data={this.state.clusterData}/>
+      <div className={styles.chartView}>
+        <Doughnut data={data}/>
+      </div>
     );
   }
 }

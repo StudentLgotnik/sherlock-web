@@ -1,0 +1,13 @@
+.deleteRun {
+    background-color: white;
+    color: black;
+    padding: 0.2rem;
+    font-family: sans-serif;
+    font-size: 15px;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    border-width: 1px;
+    display: inline-block;
+    align-items: center;
+    float: left;
+}

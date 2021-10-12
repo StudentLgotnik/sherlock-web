@@ -1,7 +1,10 @@
 import React, {useRef} from 'react';
 import Collapsible from "react-collapsible";
-import {BsChevronDown} from "react-icons/all";
 import styles from "./file-selector.module.css";
+import CollapsibleButton from "../collapsible-button/collapsible.button";
+import FileInput from "./file-input/file.input";
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const FileSelector = (props) => {
 
@@ -10,9 +13,12 @@ const FileSelector = (props) => {
   const submit = e => {
     e.preventDefault()
     const data = new FormData(form.current)
-    fetch('/api/cluster/', { method: 'POST', body: data})
-      .then(res => res.json())
-      .then(json => props.handleClusters(json))
+    if (data.get("files").name !== "") {
+      fetch('/api/cluster/', {method: 'POST', body: data})
+        .then(res => res.ok ? res.json().then(r => props.handleClusters(r)): toast.warn("Clustering fails!"))
+    } else {
+      toast.warn("Files not selected!")
+    }
   }
 
   return (
@@ -20,16 +26,16 @@ const FileSelector = (props) => {
       <table>
         <tr>
           <td>
-            <input type="file" name="files" multiple="multiple"/>
+            <FileInput/>
           </td>
         </tr>
         <tr>
           <td>
-            <input type="submit" value="Upload" /></td>
+            <input type="submit" className={styles.uploadSubmit} value="Upload" /></td>
         </tr>
         <tr>
           <td>
-            <Collapsible trigger={["Advance", <BsChevronDown/>]}>
+            <Collapsible trigger={<CollapsibleButton collapsibleName={"Advance"}/>}>
               <div >
                 <div className={styles.advanceCell}>
                   <label className={styles.para}>Epsilon:</label>
@@ -50,6 +56,7 @@ const FileSelector = (props) => {
           </td>
         </tr>
       </table>
+      <ToastContainer/>
     </form>
   )
 };

@@ -53,8 +53,9 @@ class UserForm extends Component {
         const response = await fetch('/api/users/login', requestOptions);
         if (response.ok) {
           const token = response.headers.get('Authorization');
-          cookies.set("token", token)
-          const [name, email] = jwt(token).sub.split(',');
+          const parsedToken = jwt(token);
+          cookies.set("token", token, {expires: new Date(parsedToken.exp * 1000)})
+          const [name, email] = parsedToken.sub.split(',');
           this.context.setCurrentUser({name, email})
           this.onLoginSuccess('form');
         } else {
@@ -146,7 +147,6 @@ class UserForm extends Component {
   }
 
   onLoginSuccess(method, response) {
-    alert("Log in successful!")
     this.closeModal();
     this.setState({
       loggedIn: method,
@@ -218,6 +218,7 @@ class UserForm extends Component {
                            onClick={() => {
                              context.setCurrentUser(null)
                              cookies.remove("token")
+                             window.location.reload();
                            }}>Log out</button>
             }
           }}
